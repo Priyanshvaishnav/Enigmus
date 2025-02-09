@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puzzle-deployment
+  namespace: puzzle-namespace
+  labels:
+    app: puzzle
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: puzzle
+  template:
+    metadata:
+      labels:
+        app: puzzle
+    spec:
+      containers:
+      - name: puzzle
+        image: priyansh21/puzzle:latest
+        ports:
+        - containerPort: 5173
