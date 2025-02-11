@@ -1,5 +1,5 @@
 ---
-- name: Install Docker, Java, and Minikube on Slave Node
+- name: Install Docker, Java, Minikube, and Kubectl on Slave Node
   hosts: slaves
   become: yes  # Run as sudo
   tasks:
@@ -44,3 +44,19 @@
         install minikube-linux-amd64 /usr/local/bin/minikube
       args:
         executable: /bin/bash
+
+    - name: Install Kubectl
+      shell: |
+        curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        install kubectl /usr/local/bin/kubectl
+      args:
+        executable: /bin/bash
+
+    - name: Verify kubectl installation
+      shell: kubectl version --client
+      register: kubectl_version
+      changed_when: false
+
+    - name: Display kubectl version
+      debug:
+        msg: "{{ kubectl_version.stdout }}"
