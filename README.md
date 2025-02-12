@@ -55,4 +55,19 @@ cd Terraform
 terraform init
 terraform apply -auto-approve
 ```
+## Pipeline Stages in Jenkins
+Clean Workspace 🧹
+Git Checkout 📥
+SonarQube Analysis 🔍
+OWASP Dependency Check 🔒
+Trivy File System Scan 🛡️
+Build Docker Image 🏗️
+Trivy Docker Image Scan ⚠️
+Push to DockerHub 📦
+Run Container on Slave 🖥️
+Create Kubernetes Namespace 📂
+Deploy Application to Kubernetes ☸️
+Expose Application 🌍
 
+# Results
+![Pipeline](Pictures/pipeline.png)
