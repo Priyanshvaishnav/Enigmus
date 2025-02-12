@@ -73,6 +73,6 @@ Expose Application 🌍
    ![Projectinfo](Pictures/ProjectInfo.png)
 
 ### Application
-   ![Application](Pictures/Export%20Application.png)
+   ![Application](Pictures/Expose%20Application.png)
 
 
