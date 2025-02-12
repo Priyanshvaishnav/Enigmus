@@ -74,5 +74,7 @@ Expose Application 🌍
 
 ### Application
    ![Application](Pictures/Expose%20Application.png)
+### Sonarqube Hostpot
+   ![sonarqube](Pictures/SecurityHostspot.png)
 
 
