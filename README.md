@@ -63,4 +63,6 @@ Deploy Application to Kubernetes ☸️
 Expose Application 🌍
 
 # Results
-![Pipeline](Pictures/pipeline.png)
+1) ![Pipeline](Pictures/pipeline.png)
+
+2) ![Ports](Pictures/Expose ports slave.png)
