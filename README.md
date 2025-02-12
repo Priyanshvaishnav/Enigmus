@@ -69,3 +69,6 @@ Expose Application 🌍
 ### Exported Ports ON Slave Node
    ![Exported Ports](Pictures/Export%20ports%20Slave.png)
 
+### Project Info
+   ![Projectinfo](Pictures/ProjectInfo.png)
+
