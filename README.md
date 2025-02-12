@@ -65,7 +65,7 @@ Expose Application 🌍
 # Results
 
 ### Pipeline Flow
-    ![Pipeline](Pictures/pipeline.png)
-
-3) ![Exported Ports](Pictures/Export%20ports%20Slave.png)
+ ![Pipeline](Pictures/pipeline.png)
+### Exported Ports ON Slave Node
+   ![Exported Ports](Pictures/Export%20ports%20Slave.png)
 
