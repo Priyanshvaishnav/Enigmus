@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: puzzle-deployment
-  namespace: puzzle-namespace
+  namespace: Enigmus-namespace
   labels:
     app: puzzle
 spec: 
