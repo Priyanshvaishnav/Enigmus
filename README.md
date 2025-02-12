@@ -48,13 +48,6 @@ This project automates the deployment of an application using **Terraform, Ansib
 
 ---
 
-## **Setup & Deployment Guide**
-### **1️⃣ Provision EC2 Instances**
-```sh
-cd Terraform
-terraform init
-terraform apply -auto-approve
-```
 ## Pipeline Stages in Jenkins
 Clean Workspace 🧹
 Git Checkout 📥
