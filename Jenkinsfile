@@ -1,35 +1,37 @@
 pipeline {
     agent { label 'dev' }  
+
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
         DOCKER_IMAGE = 'priyansh21/puzzle:latest'
-        NAMESPACE = 'puzzle-namespace'
+        NAMESPACE = 'enigmus-namespace'
         DOCKER_CONTAINER = 'puzzle-container'
     }
+
     stages {
         stage('Clean Workspace') {
             steps {
                 cleanWs()
             }
         }
-        
+
         stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Priyanshvaishnav/Enigmus.git'
             }
         }
-        
-        
-         stage('SonarQube Analysis') {
-    steps {
-        withSonarQubeEnv('sonar-scanner') {
-            sh '''
-                $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Enigmus -Dsonar.projectKey=Enigmus
-            '''
-        }
-    }
-}
 
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar-scanner') {
+                    sh '''
+                        $SCANNER_HOME/bin/sonar-scanner \
+                        -Dsonar.projectName=Enigmus \
+                        -Dsonar.projectKey=Enigmus
+                    '''
+                }
+            }
+        }
 
         stage('OWASP Dependency Check') {
             steps {
@@ -43,16 +45,17 @@ pipeline {
                 script {
                     def exitCode = sh(script: "trivy fs . > trivyfs.txt; echo \$?", returnStatus: true)
                     if (exitCode != 0) {
-                        input(message: "Trivy FS scan detected vulnerabilities. Do you want to proceed?", ok: "Proceed")
+                        timeout(time: 2, unit: 'MINUTES') {  
+                            try {
+                                input(message: "Trivy FS scan detected vulnerabilities. Do you want to proceed?", ok: "Proceed")
+                            } catch (Exception e) {
+                                echo "No response within 2 minutes, proceeding automatically..."
+                            }
+                        }
                     }
                 }
             }
         }
-
-        
-        
-
-        
 
         stage('Build Docker Image') {
             steps {
@@ -60,12 +63,18 @@ pipeline {
             }
         }
 
-         stage('Trivy Scan (Docker Image)') {
+        stage('Trivy Scan (Docker Image)') {
             steps {
                 script {
                     def exitCode = sh(script: "trivy image ${DOCKER_IMAGE} > trivyimage.txt; echo \$?", returnStatus: true)
                     if (exitCode != 0) {
-                        input(message: "Trivy Image scan detected vulnerabilities. Do you want to proceed?", ok: "Proceed")
+                        timeout(time: 2, unit: 'MINUTES') {  
+                            try {
+                                input(message: "Trivy Image scan detected vulnerabilities. Do you want to proceed?", ok: "Proceed")
+                            } catch (Exception e) {
+                                echo "No response within 2 minutes, proceeding automatically..."
+                            }
+                        }
                     }
                 }
             }
@@ -88,24 +97,22 @@ pipeline {
                 sh "docker run -d --name ${DOCKER_CONTAINER} -p 5173:5173 ${DOCKER_IMAGE}"
             }
         }
-        
-         stage('Create Kubernetes Namespace') {
+
+        stage('Create Kubernetes Namespace') {
             steps {
                 sh "kubectl create namespace ${NAMESPACE} || echo 'Namespace already exists'"
             }
         }
-        
-             stage('Deploy Application to Kubernetes') {
+
+        stage('Deploy Application to Kubernetes') {
             steps {
                 sh "kubectl apply -f K8s-manifest/ -n ${NAMESPACE}"
             }
         }
-        
-        
+
         stage('Expose Application') {
             steps {
                 script {
-                    
                     def serviceUrl = sh(script: "minikube service puzzle-service -n ${NAMESPACE} --url", returnStdout: true).trim()
                     echo "Application is running at: ${serviceUrl}"
                     
