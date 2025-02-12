@@ -65,4 +65,5 @@ Expose Application 🌍
 # Results
 1) ![Pipeline](Pictures/pipeline.png)
 
-2) ![Ports](Pictures/Expose ports slave.png)
+2) ![Exported Ports](Pictures/Export%20ports%20Slave.png)
+
