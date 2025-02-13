@@ -96,7 +96,7 @@ This project automates the deployment of a web application using **Terraform, An
 ![SonarQube](Pictures/SecurityHostspot.png)  
 
 ### **Grafana**  
-![Grafana Dashboard](Pictures/Grafana_dashb.png)  
+![Grafana Dashboard](Pictures/Grafana_dash.png)  
 
 For more images, check the **Pictures/** directory.  
 
