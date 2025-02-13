@@ -1,11 +1,11 @@
 # **Enigmus Project - CI/CD Pipeline with Jenkins, Kubernetes, and Security Scanning**  
 
-## **📌 Overview**  
-This project automates the deployment of a web application using **Terraform, Ansible, Jenkins, Docker, and Kubernetes (Minikube)**. The CI/CD pipeline integrates **SonarQube, Trivy, and OWASP Dependency-Check** to ensure security and code quality.  
+## **Overview**
+This project automates the deployment of a web application using **Terraform, Ansible, Jenkins, Docker, and Kubernetes (Minikube)**. The CI/CD pipeline integrates **SonarQube, Trivy, and OWASP Dependency-Check** to ensure security and code quality. Additionally, Prometheus and Grafana have been integrated for real-time monitoring of the Kubernetes cluster and application performance.
 
 ---
 
-## **🚀 Project Workflow**  
+## ** Project Workflow**  
 
 ### **1️⃣ Provisioning EC2 Instances** 🖥️  
 - Used **Terraform** to create **two EC2 instances**:  
@@ -34,7 +34,9 @@ This project automates the deployment of a web application using **Terraform, An
    - **Trivy Scans** → Scans the **filesystem & Docker image** for security issues  
 4. **Builds the application’s Docker image** and **pushes it to DockerHub**.  
 5. **Deploys the application on the Slave Node** using **Kubernetes** (Minikube).  
-6. **Creates a Kubernetes namespace** and **exposes the service** to make the application accessible.  
+6. **Creates a Kubernetes namespace** and **exposes the service** to make the application accessible.
+7. **Sets up Prometheus monitoring to track container performance.
+8. **Visualizes the metrics using Grafana dashboards.
 
 ---
 
@@ -50,24 +52,26 @@ This project automates the deployment of a web application using **Terraform, An
 | **SonarQube** | **Code Quality & Static Analysis** |
 | **Trivy** | **Security Scanning (Filesystem & Docker images)** |
 | **OWASP Dependency-Check** | **Dependency Security Analysis** |
-
+| **Prometheus** | **Monitoring Kubernetes Cluster & Application Metrics** |
+| **Grafana** | **Visualizing Metrics via Dashboards** |
 ---
 
 ## **🔧 CI/CD Pipeline Stages in Jenkins**  
 
-✅ **Clean Workspace** 🧹  
-✅ **Git Checkout** 📥  
-✅ **SonarQube Analysis** 🔍  
-✅ **OWASP Dependency Check** 🔒  
-✅ **Trivy File System Scan** 🛡️  
-✅ **Build Docker Image** 🏗️  
-✅ **Trivy Docker Image Scan** ⚠️  
-✅ **Push to DockerHub** 📦  
-✅ **Run Container on Slave** 🖥️  
-✅ **Create Kubernetes Namespace** 📂  
-✅ **Deploy Application to Kubernetes** ☸️  
-✅ **Expose Application** 🌍  
-
+ **Clean Workspace** 🧹  
+ **Git Checkout** 📥  
+ **SonarQube Analysis** 🔍  
+ **OWASP Dependency Check** 🔒  
+ **Trivy File System Scan** 🛡️  
+ **Build Docker Image** 🏗️  
+ **Trivy Docker Image Scan** ⚠️  
+ **Push to DockerHub** 📦  
+ **Run Container on Slave** 🖥️  
+ **Create Kubernetes Namespace** 📂  
+ **Deploy Application to Kubernetes** ☸️  
+ **Expose Application** 🌍  
+ **Setup Prometheus Monitoring** 📡
+ **Grafana Dashboard Integration** 📊
 ---
 
 ## **📊 Results & Screenshots**  
