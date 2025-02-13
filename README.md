@@ -95,6 +95,8 @@ This project automates the deployment of a web application using **Terraform, An
 ### **🛡️ SonarQube Security Analysis (Hotspots)**  
 ![SonarQube](Pictures/SecurityHostspot.png)  
 
+### **🛡️PRometheus Query**  
+![Prometheus](Pictures/RunningQuery.png)  
 ### **Grafana**  
 ![Grafana Dashboard](Pictures/Grafana_dash.png)  
 
