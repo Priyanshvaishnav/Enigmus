@@ -58,20 +58,20 @@ This project automates the deployment of a web application using **Terraform, An
 
 ## **🔧 CI/CD Pipeline Stages in Jenkins**  
 
- **Clean Workspace** 🧹  
- **Git Checkout** 📥  
- **SonarQube Analysis** 🔍  
- **OWASP Dependency Check** 🔒  
- **Trivy File System Scan** 🛡️  
- **Build Docker Image** 🏗️  
- **Trivy Docker Image Scan** ⚠️  
- **Push to DockerHub** 📦  
- **Run Container on Slave** 🖥️  
- **Create Kubernetes Namespace** 📂  
- **Deploy Application to Kubernetes** ☸️  
- **Expose Application** 🌍  
- **Setup Prometheus Monitoring** 📡
- **Grafana Dashboard Integration** 📊
+ ***Clean Workspace*** 🧹  
+ ***Git Checkout*** 📥  
+ ***SonarQube Analysis*** 🔍  
+ ***OWASP Dependency Check*** 🔒  
+ ***Trivy File System Scan*** 🛡️  
+ ***Build Docker Image*** 🏗️  
+ ***Trivy Docker Image Scan*** ⚠️  
+ ***Push to DockerHub*** 📦  
+ ***Run Container on Slave*** 🖥️  
+ ***Create Kubernetes Namespace*** 📂  
+ ***Deploy Application to Kubernetes*** ☸️  
+ ***Expose Application*** 🌍  
+ ***Setup Prometheus Monitoring*** 📡
+ ***Grafana Dashboard Integration*** 📊
 ---
 
 ## **📊 Results & Screenshots**  
