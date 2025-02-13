@@ -1,5 +1,3 @@
-
-
 # **Enigmus Project - CI/CD Pipeline with Jenkins, Kubernetes, and Security Scanning**  
 
 ## **Overview**
@@ -7,7 +5,7 @@ This project automates the deployment of a web application using **Terraform, An
 
 ---
 
-## ** Project Workflow**  
+## **Project Workflow**  
 
 ### **1️⃣ Provisioning EC2 Instances** 🖥️  
 - Used **Terraform** to create **two EC2 instances**:  
@@ -36,9 +34,9 @@ This project automates the deployment of a web application using **Terraform, An
    - **Trivy Scans** → Scans the **filesystem & Docker image** for security issues  
 4. **Builds the application’s Docker image** and **pushes it to DockerHub**.  
 5. **Deploys the application on the Slave Node** using **Kubernetes** (Minikube).  
-6. **Creates a Kubernetes namespace** and **exposes the service** to make the application accessible.
-7. **Sets up Prometheus monitoring to track container performance.
-8. **Visualizes the metrics using Grafana dashboards.
+6. **Creates a Kubernetes namespace** and **exposes the service** to make the application accessible.  
+7. **Sets up Prometheus monitoring to track container performance.**  
+8. **Visualizes the metrics using Grafana dashboards.**  
 
 ---
 
@@ -56,6 +54,7 @@ This project automates the deployment of a web application using **Terraform, An
 | **OWASP Dependency-Check** | **Dependency Security Analysis** |
 | **Prometheus** | **Monitoring Kubernetes Cluster & Application Metrics** |
 | **Grafana** | **Visualizing Metrics via Dashboards** |
+
 ---
 
 ## **🔧 CI/CD Pipeline Stages in Jenkins**  
@@ -72,14 +71,16 @@ This project automates the deployment of a web application using **Terraform, An
 ✅ **Create Kubernetes Namespace** 📂  
 ✅ **Deploy Application to Kubernetes** ☸️  
 ✅ **Expose Application** 🌍  
-✅ **Setup Prometheus Monitoring** 📡
-✅ **Grafana Dashboard Integration** 📊
+✅ **Setup Prometheus Monitoring** 📡  
+✅ **Grafana Dashboard Integration** 📊  
+
 ---
 
 ## **📊 Results & Screenshots**  
 
-### ** ARchitecture **
+### **Architecture**  
 ![Architecture](Pictures/diagram-export-2-13-2025-11_31_55-PM.png)  
+
 ### **🔄 Pipeline Flow**  
 ![Pipeline](Pictures/pipeline.png)  
 
@@ -95,8 +96,9 @@ This project automates the deployment of a web application using **Terraform, An
 ### **🛡️ SonarQube Security Analysis (Hotspots)**  
 ![SonarQube](Pictures/SecurityHostspot.png)  
 
-### **🛡️PRometheus Query**  
+### **🛡️ Prometheus Query**  
 ![Prometheus](Pictures/RunningQuery.png)  
+
 ### **Grafana**  
 ![Grafana Dashboard](Pictures/Grafana_dash.png)  
 
@@ -104,9 +106,7 @@ For more images, check the **Pictures/** directory.
 
 ---
 
-
 ## **📢 Future Improvements**  
-🔹 **Monitoring Integration**: Add **Prometheus & Grafana** for real-time monitoring of pods.  
 🔹 **Multi-Node Kubernetes Setup**: Deploy on **AWS EKS** instead of Minikube.  
 🔹 **Automated Rollback**: Implement rollback mechanisms in case of failed deployments.  
 
