@@ -3,7 +3,7 @@
 ## **Overview**
 This project automates the deployment of a web application using **Terraform, Ansible, Jenkins, Docker, and Kubernetes (Minikube)**. The CI/CD pipeline integrates **SonarQube, Trivy, and OWASP Dependency-Check** to ensure security and code quality. Additionally, Prometheus and Grafana have been integrated for real-time monitoring of the Kubernetes cluster and application performance.
 
-🔗 **Live Deployment:** [enigmus.vercel.app](#)
+🔗 **Live Deployment:** [Vercel Link](https://enigmus.vercel.app/)  
 ---
 
 ## **Project Workflow**  
