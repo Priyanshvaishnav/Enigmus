@@ -95,37 +95,13 @@ This project automates the deployment of a web application using **Terraform, An
 ### **🛡️ SonarQube Security Analysis (Hotspots)**  
 ![SonarQube](Pictures/SecurityHostspot.png)  
 
+### **Grafana**  
+![Grafana Dashboard](Pictures/Grafana_dashb.png)  
+
 For more images, check the **Pictures/** directory.  
 
 ---
 
-## **📖 How to Run the Project**  
-
-### **1️⃣ Clone the Repository**  
-```sh
-git clone https://github.com/Priyanshvaishnav/Enigmus.git
-cd Enigmus
-```
-
-### **2️⃣ Deploy EC2 Instances (Terraform)**  
-```sh
-cd Terraform
-terraform init
-terraform apply -auto-approve
-```
-
-### **3️⃣ Configure Master & Slave using Ansible**  
-```sh
-cd Ansible
-ansible-playbook -i hosts install_tool.yaml
-```
-
-### **4️⃣ Setup Jenkins & Run Pipeline**  
-- Access **Jenkins** at `http://<Master_Node_IP>:8080`  
-- Create a **new pipeline** and copy the Jenkinsfile script.  
-- Run the pipeline and monitor logs.  
-
----
 
 ## **📢 Future Improvements**  
 🔹 **Monitoring Integration**: Add **Prometheus & Grafana** for real-time monitoring of pods.  
