@@ -78,6 +78,8 @@ This project automates the deployment of a web application using **Terraform, An
 
 ## **📊 Results & Screenshots**  
 
+### ** ARchitecture **
+![Architecture](Pictures/diagram-export-2-13-2025-11_31_55-PM.png)  
 ### **🔄 Pipeline Flow**  
 ![Pipeline](Pictures/pipeline.png)  
 
